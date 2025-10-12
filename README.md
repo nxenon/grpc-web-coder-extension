@@ -19,7 +19,7 @@ Encode/Decode gRPC-Web payloads automatically. Supported Content-Types:
 
 - Scan gRPC-Web Endpoints (find hidden endpoints and services):
 
-![consoleOutputImage](https://github.com/user-attachments/assets/9ec8a19c-1311-471b-9a1a-0f18afaadb02)
+![consoleOutputImage](https://github.com/user-attachments/assets/b3c76cf6-00ac-4811-9bac-5c58a9306a81)
 
 ## gRPC-Pentest-Suite
 For gRPC-Web pentesting tutorial see [grpc-pentest-suite](https://github.com/nxenon/grpc-pentest-suite).
