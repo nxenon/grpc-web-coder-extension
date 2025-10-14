@@ -33,6 +33,7 @@ class BurpExtender(IBurpExtender, IMessageEditorTabFactory, ITab, ActionListener
         self._enable_extension_msg_editor_tab_check_box.setSelected(True)
         self._detect_encode_decode_format_from_ct_header_check_box = JCheckBox("Detect Encode/Decode format from "
                                                                                "Content-Type header (with value of "
+                                                                               "application/grpc or "
                                                                                "application/grpc-web-text or "
                                                                                "application/grpc-web+proto)")
         self._detect_encode_decode_format_from_ct_header_check_box.addActionListener(self)
@@ -40,6 +41,7 @@ class BurpExtender(IBurpExtender, IMessageEditorTabFactory, ITab, ActionListener
         self._detect_encode_decode_format_from_x_grpc_header_check_box = JCheckBox("Detect Encode/Decode format from "
                                                                                    "x-grpc-content-type header (with "
                                                                                    "value of "
+                                                                                   "application/grpc or "
                                                                                    "application/grpc-web-text or "
                                                                                    "application/grpc-web+proto)")
 
@@ -55,7 +57,7 @@ class BurpExtender(IBurpExtender, IMessageEditorTabFactory, ITab, ActionListener
 
         self._enable_application_grpc_web_proto_decode_encode_by_default_check_box = JCheckBox("Enable "
                                                                                               "application/grpc-web"
-                                                                                              "+proto Decode/Encode by "
+                                                                                              "+proto OR application/grpc Decode/Encode by "
                                                                                               "default on all requests")
         self._enable_application_grpc_web_proto_decode_encode_by_default_check_box.addActionListener(self)
 
