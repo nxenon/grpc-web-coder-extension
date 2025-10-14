@@ -1,6 +1,7 @@
 # gRPC-Web Coder Extension
 
 Encode/Decode gRPC-Web payloads automatically. Supported Content-Types:
+- application/grpc
 - application/grpc-web-text
 - application/grpc-web+proto
 
