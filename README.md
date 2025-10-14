@@ -8,7 +8,7 @@ Encode/Decode gRPC-Web payloads automatically. Supported Content-Types:
 ## gRPC-Web Burp Extension Images
 - Main Settings:
   
-![mainSettingsImage](https://github.com/user-attachments/assets/77d0dc20-f6a2-4ac6-b955-00cd6f90e0ec)
+![mainSettingsImage](https://github.com/user-attachments/assets/8449ce6c-c9e2-4be4-ad46-4a7787559de2)
 
 - Message Editor:
   
