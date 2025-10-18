@@ -103,7 +103,7 @@ class GrpcWebExtensionEditorTab(IMessageEditorTab, ActionListener):  # FIXED: Im
                         if value == 'application/grpc-web-text':
                             self._enableGrpcWebTextEncodeDecode = True
                             __isEnabled = True
-                        elif value == 'application/grpc-web+proto' or value == 'application/grpc':
+                        elif value == 'application/grpc-web+proto':
                             self._enableGrpcWebProtoEncodeDecode = True
                             __isEnabled = True
 
@@ -114,7 +114,7 @@ class GrpcWebExtensionEditorTab(IMessageEditorTab, ActionListener):  # FIXED: Im
                         if value2 == 'application/grpc-web-text':
                             self._enableGrpcWebTextEncodeDecode = True
                             __isEnabled = True
-                        elif value2 == 'application/grpc-web+proto' or value2 == 'application/grpc':
+                        elif value2 == 'application/grpc-web+proto':
                             self._enableGrpcWebProtoEncodeDecode = True
                             __isEnabled = True
 
