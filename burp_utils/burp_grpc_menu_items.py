@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from threading import Thread
 from javax.swing import JMenu, JMenuItem
 from java.util import ArrayList
 from burp_utils.grpc_scan import extract_all_grpc_messages_and_endpoints
@@ -8,7 +9,13 @@ def GetMenuItems(BurpExtender, invocation):
 
     # Create a single menu item (no submenu)
     def onClick(e, invocation=invocation):
-        scan_grpc_web_endpoints(invocation, "scan_grpc_web_endpoints", BurpExtender._helpers)
+        # # use thread to avoid GUI blocking
+        t = Thread(
+            target=scan_grpc_web_endpoints,
+            args=(invocation, "scan_grpc_web_endpoints", BurpExtender._helpers)
+        )
+        t.start()
+        # scan_grpc_web_endpoints(invocation, "scan_grpc_web_endpoints", BurpExtender._helpers)
 
     item1 = JMenuItem("Scan gRPC-Web Endpoints", actionPerformed=onClick)
 
