@@ -2,7 +2,6 @@
 Version: 1.1.0
 
 Encode/Decode gRPC-Web payloads automatically. Supported Content-Types:
-- application/grpc
 - application/grpc-web-text
 - application/grpc-web+proto
 
