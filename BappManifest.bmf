@@ -2,8 +2,8 @@ Uuid: 63b92be302fa4521bf18d74b3adbbc00
 ExtensionType: 2
 Name: gRPC-Web Coder
 RepoName: grpc-web-coder
-ScreenVersion: 1.0.0
-SerialVersion: 2
+ScreenVersion: 1.1.0
+SerialVersion: 3
 MinPlatformVersion: 2
 ProOnly: False
 Author: Amin Nasiri
