@@ -2,7 +2,7 @@
 from threading import Thread
 from javax.swing import JMenu, JMenuItem
 from java.util import ArrayList
-from burp_utils.grpc_scan import extract_all_grpc_messages_and_endpoints
+from burp_utils.grpc_analyze import extract_all_grpc_messages_and_endpoints
 
 def GetMenuItems(BurpExtender, invocation):
     menu_list = ArrayList()
@@ -11,13 +11,12 @@ def GetMenuItems(BurpExtender, invocation):
     def onClick(e, invocation=invocation):
         # # use thread to avoid GUI blocking
         t = Thread(
-            target=scan_grpc_web_endpoints,
-            args=(invocation, "scan_grpc_web_endpoints", BurpExtender._helpers)
+            target=analyze_grpc_web_endpoints,
+            args=(invocation, "analyze_grpc_web_endpoints", BurpExtender._helpers)
         )
         t.start()
-        # scan_grpc_web_endpoints(invocation, "scan_grpc_web_endpoints", BurpExtender._helpers)
 
-    item1 = JMenuItem("Scan gRPC-Web Endpoints", actionPerformed=onClick)
+    item1 = JMenuItem("Analyze gRPC-Web Endpoints", actionPerformed=onClick)
 
     # Add directly to the menu list
     menu_list.add(item1)
@@ -25,7 +24,7 @@ def GetMenuItems(BurpExtender, invocation):
     return menu_list
 
 
-def scan_grpc_web_endpoints(invocation, option, helpers):
+def analyze_grpc_web_endpoints(invocation, option, helpers):
     messages = invocation.getSelectedMessages()
     for message in messages:
         try:

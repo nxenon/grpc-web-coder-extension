@@ -1,5 +1,5 @@
 """
-GRPC-Scan
+GRPC-Analyze
 Extracting Methods, Services and Messages (Routes) in JS files (grpc-web)
 """
 
