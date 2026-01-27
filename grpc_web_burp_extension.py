@@ -1,11 +1,14 @@
-from burp import IBurpExtender, IMessageEditorTabFactory, ITab
+from burp import IBurpExtender, IMessageEditorTabFactory, ITab, IContextMenuFactory
 from java.io import PrintWriter
 from javax.swing import JPanel, JCheckBox, JLabel, BoxLayout
 from java.awt.event import ActionListener
+from javax.swing import JMenu, JMenuItem
+from java.util import ArrayList
 from burp_utils.burp_grpc_web_editor_tab import GrpcWebExtensionEditorTab
+from burp_utils.burp_grpc_menu_items import GetMenuItems
 
 
-class BurpExtender(IBurpExtender, IMessageEditorTabFactory, ITab, ActionListener):
+class BurpExtender(IBurpExtender, IMessageEditorTabFactory, ITab, IContextMenuFactory, ActionListener):
     def registerExtenderCallbacks(self, callbacks):
         self._callbacks = callbacks
         self._helpers = callbacks.getHelpers()
@@ -19,6 +22,8 @@ class BurpExtender(IBurpExtender, IMessageEditorTabFactory, ITab, ActionListener
 
         # Register TabFactory
         callbacks.registerMessageEditorTabFactory(self)
+        # Register Menu Items
+        callbacks.registerContextMenuFactory(self)
 
         # Create and register a new UI tab
         self._panel = JPanel()
@@ -71,7 +76,10 @@ class BurpExtender(IBurpExtender, IMessageEditorTabFactory, ITab, ActionListener
         # Register the new tab
         callbacks.addSuiteTab(self)
 
-        # Handle checkbox clicks
+    def createMenuItems(self, invocation):
+        return GetMenuItems(self, invocation)
+
+    # Handle checkbox clicks
     def actionPerformed(self, event):
         source = event.getSource()
         if source == self._enable_extension_msg_editor_tab_check_box:
