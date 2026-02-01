@@ -100,10 +100,10 @@ class GrpcWebExtensionEditorTab(IMessageEditorTab, ActionListener):  # FIXED: Im
                     if h.lower().startswith('content-type'):
                         _, value = h.split(':', 1)
                         value = value.strip()
-                        if value.startswith('application/grpc-web-text'):
+                        if value == 'application/grpc-web-text':
                             self._enableGrpcWebTextEncodeDecode = True
                             __isEnabled = True
-                        elif value.startswith('application/grpc-web+proto'):
+                        elif value == 'application/grpc-web+proto':
                             self._enableGrpcWebProtoEncodeDecode = True
                             __isEnabled = True
 
@@ -111,10 +111,10 @@ class GrpcWebExtensionEditorTab(IMessageEditorTab, ActionListener):  # FIXED: Im
                     if h.lower().startswith('x-grpc-content-type'):
                         _, value2 = h.split(':', 1)
                         value2 = value2.strip()
-                        if value2.startswith('application/grpc-web-text'):
+                        if value2 == 'application/grpc-web-text':
                             self._enableGrpcWebTextEncodeDecode = True
                             __isEnabled = True
-                        elif value2.startswith('application/grpc-web+proto'):
+                        elif value2 == 'application/grpc-web+proto':
                             self._enableGrpcWebProtoEncodeDecode = True
                             __isEnabled = True
 

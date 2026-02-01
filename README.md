@@ -1,4 +1,5 @@
 # gRPC-Web Coder Extension
+Version: 1.1.0
 
 Encode/Decode gRPC-Web payloads automatically. Supported Content-Types:
 - application/grpc-web-text
@@ -7,7 +8,7 @@ Encode/Decode gRPC-Web payloads automatically. Supported Content-Types:
 ## gRPC-Web Burp Extension Images
 - Main Settings:
   
-![mainSettingsImage](https://github.com/user-attachments/assets/77d0dc20-f6a2-4ac6-b955-00cd6f90e0ec)
+![mainSettingsImage](https://github.com/user-attachments/assets/8449ce6c-c9e2-4be4-ad46-4a7787559de2)
 
 - Message Editor:
   
@@ -16,6 +17,10 @@ Encode/Decode gRPC-Web payloads automatically. Supported Content-Types:
 - Message Editor Decoded:
   
 ![messageEditorDecodedImage](https://github.com/user-attachments/assets/1c9a972c-42df-45ef-9317-989c912bfa99)
+
+- Analyze gRPC-Web Endpoints (find hidden endpoints and services):
+
+![consoleOutputImage](https://github.com/user-attachments/assets/b3c76cf6-00ac-4811-9bac-5c58a9306a81)
 
 ## gRPC-Pentest-Suite
 For gRPC-Web pentesting tutorial see [grpc-pentest-suite](https://github.com/nxenon/grpc-pentest-suite).
